@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        StartCoroutine(timer());
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        die();
+    }
+
+    IEnumerator timer()
+    {
+        yield return new WaitForSeconds(2f);
+        die();
+    }
+
+    void die()
+    {
+        Destroy(gameObject);
     }
 }
