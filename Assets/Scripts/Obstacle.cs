@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    private GameMaster gm;
     private void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameMaster>();
         StartCoroutine(timer());
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        die();
+        gm.KillPlayer();
     }
 
     IEnumerator timer()

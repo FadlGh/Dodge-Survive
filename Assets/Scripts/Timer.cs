@@ -7,6 +7,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private GameMaster gm;
     private float timer;
 
     private void Start()
@@ -17,14 +18,17 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        if (!gm.isPaused)
+        {
+            timer += Time.deltaTime;
 
-        int minutes = Mathf.FloorToInt(timer / 60f);
-        int seconds = Mathf.FloorToInt(timer % 60f);
+            int minutes = Mathf.FloorToInt(timer / 60f);
+            int seconds = Mathf.FloorToInt(timer % 60f);
 
-        string timerString = string.Format("{0:00}:{1:00}", minutes, seconds);
+            string timerString = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        timerText.text = timerString;
+            timerText.text = timerString;
+        }
     }
 }
 

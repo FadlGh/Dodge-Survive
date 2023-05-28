@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4116230711551090392}
   - component: {fileID: 2068074809759097787}
   - component: {fileID: -7606423165542860062}
+  - component: {fileID: -6544432477679412573}
   - component: {fileID: 2248958201391973380}
   m_Layer: 0
   m_Name: Obstacle
@@ -107,6 +108,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &-6544432477679412573
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620784696199826219}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!114 &2248958201391973380
 MonoBehaviour:
   m_ObjectHideFlags: 0
